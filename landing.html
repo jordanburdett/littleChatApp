@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin-top: 100px;
+        }
+
+        .flexContainer {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            height: 100%;
+        }
+
+        .centerBox {
+            width: 90%;
+            text-align: center;
+            margin: 10px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="flexContainer">
+        <div class="centerBox">
+            Please Enter Your name
+        </div>
+        <div class="centerBox">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+            <button onclick="onNameSubmit()">Submit</button>
+        </div>
+    </div>
+    <script>
+        function onNameSubmit() {
+            const name = document.getElementById("name").value;
+
+            // clean up the value or something -- do some checks if its valid and stuff
+            window.location.href = `/chat?name=${name}`;
+        }
+    </script>
+</body>
+
+</html>
